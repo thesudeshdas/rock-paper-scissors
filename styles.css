@@ -1,0 +1,175 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Montserrat&family=Open+Sans&family=Raleway:wght@900&family=Roboto&family=Source+Code+Pro:wght@700&family=Ubuntu:wght@700&display=swap');
+
+
+:root {
+    font-family: 'Roboto', sans-serif;
+    
+    --bg-primary: #F5F5F5;
+    --text-color-primary: #F5F5F5;
+    --theme-color-primary: #18181B;
+    
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-primary);
+}
+
+
+
+
+/* game */
+.container-flex {
+    display: flex;
+    background: lightblue;
+    border: 2px solid red;
+    flex-direction: row;
+    height: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.container-flex-item {
+    border: 2px solid black;
+    width: 45%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-choiceholder {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2 {
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+/* navbar */
+nav {
+    background-color: var(--theme-color-primary);
+    color: var(--text-color-primary);
+    padding: 0 1rem 0.2rem 1rem;
+}
+
+.heading-nav {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 0.1rem;
+    margin-bottom: 0;
+    color: var(--text-color-primary);
+}
+
+/* links */
+a {
+    text-decoration: none;
+    color: var(--text-color-primary);
+}
+
+.link-button-alternate {
+    display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 0.2rem;
+    padding: 0.4rem 0.8rem;
+    margin: 1rem 0;
+    background-color: var(--bg-primary);
+    border: thin solid var(--theme-color-primary);
+    color: var(--theme-color-primary);
+    min-width: 6.5rem;
+}
+
+/* lists */
+ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 0 0 0rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.list-item-inline {
+    display: inline;
+    margin: 0 1rem;
+}
+
+/* footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--theme-color-primary);
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-color-primary);
+}
+
+footer h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--bg-dark);
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Open Sans', sans-serif;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* FOR DESKTOP */
+@media only screen and (min-width: 768px) {
+    /* footer */
+    footer {
+        padding-bottom: 1rem;
+    }
+
+    footer h2 {
+        margin: 0.5rem;
+    }
+}

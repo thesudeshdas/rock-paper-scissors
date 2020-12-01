@@ -3,6 +3,14 @@ let playerWin = 0;
 let computerWin = 0;
 let x = 5;
 
+// create objects for choice
+const computerChoices = [
+    {
+        'choice': 'rock',
+        'pic': ''
+    }
+]
+
 //get the button
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
