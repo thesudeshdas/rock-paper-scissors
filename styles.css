@@ -14,8 +14,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
     background: var(--bg-primary);
 }
 
@@ -25,8 +23,7 @@ html, body {
 /* game */
 .container-flex {
     display: flex;
-    background: lightblue;
-    border: 2px solid red;
+    background: var(--bg-primary);
     flex-direction: row;
     height: 100%;
     padding: 1rem;
@@ -34,7 +31,6 @@ html, body {
 }
 
 .container-flex-item {
-    border: 2px solid black;
     width: 45%;
     height: 100%;
     text-align: center;
@@ -43,13 +39,48 @@ html, body {
 }
 
 .container-choiceholder {
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.choices-div {
+    width: 100%;
+}
+
+
+
+
+/* horizental rule */
+hr {
+    border: 1px solid var(--theme-color-primary);
+    background-color: var(--theme-color-primary);
+    border-radius: 1rem;
+    margin: 0 1rem;
 }
 
 
 
 
 
+
+
+
+
+
+/* images */
+img {
+    height: 5rem;
+}
+
+/* buttons */
+button {
+    border: none;
+    margin: 0 1rem;
+    padding: 0;
+    background: transparent;
+    outline: none;
+}
 
 
 
@@ -132,8 +163,10 @@ li {
 
 /* footer */
 footer {
-    position: absolute;
+    display: block;
     bottom: 0;
+    right: 0;
+    left: 0;
     background-color: var(--theme-color-primary);
     text-align: center;
     padding: 1rem;
@@ -153,6 +186,10 @@ footer ul {
     margin-top: 1rem;
 }
 
+.attribution {
+    text-decoration: underline;
+}
+
 
 
 
@@ -164,7 +201,10 @@ footer ul {
 
 /* FOR DESKTOP */
 @media only screen and (min-width: 768px) {
-    /* footer */
+    .container-flex {
+        margin: 0 22rem;
+    }
+    
     footer {
         padding-bottom: 1rem;
     }

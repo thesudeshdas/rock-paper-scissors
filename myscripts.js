@@ -4,10 +4,17 @@ let computerWin = 0;
 let x = 5;
 
 // create objects for choice
-const computerChoices = [
+const choices = [
     {
         'choice': 'rock',
-        'pic': ''
+        'pic': '/images/rock.svg',
+    }, 
+    {
+        'choice': 'paper',
+        'pic': '/images/paper.svg',
+    },{
+        'choice': 'scissors',
+        'pic': '/images/scissors.svg',
     }
 ]
 
@@ -17,18 +24,41 @@ const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 
 // generate random choice for pc
-function computerChoice() {
-    const choices = ['rock', 'paper', 'scissors'];
-    return choices[Math.floor(Math.random() * choices.length)];
+const computerChoice = () => choices[Math.floor(Math.random() * choices.length)].choice;
+
+
+// show choices
+const showChoice = (playerChoice, computerChoice) => {
+    // show images for choices
+    const playerChoiceDiv = document.querySelector('#player-choice-div');
+    const computerChoiceDiv = document.querySelector('#computer-choice-div');
+    
+    choices.forEach(sign => {
+        if (sign.choice == playerChoice) {
+            playerChoiceDiv.innerHTML = `
+                <img src="${sign.pic}" alt="${sign.choice}">
+          `
+        }
+        
+        if (sign.choice == computerChoice) {
+            computerChoiceDiv.innerHTML = `
+                <img src="${sign.pic}" alt="${sign.choice}">
+          `
+        }
+    })
 }
+
 
 //function for 1 round
 function playRound(playerSelection) {
     let computerSelection = computerChoice();
-
-    //initialise result as a string
-    let result = ''
-
+    
+    // get the element to show player & computer score
+    const playerScoreEl = document.querySelector('#player-score');
+    const computerScoreEl = document.querySelector('#computer-score');
+    
+    showChoice(playerSelection, computerSelection);
+    
     //compare and return result
     if(playerSelection == computerSelection) {
         result = "Its a tie, both called " + playerSelection;
@@ -36,54 +66,37 @@ function playRound(playerSelection) {
 
       else if(playerSelection == 'rock' && computerSelection == 'scissors' 
             || playerSelection == 'paper'  && computerSelection == 'rock'
-            || playerSelection == 'scissors' &&  computerSelection == 'paper') {
-              result = 'You Win, ' + playerSelection + ' beats ' + computerSelection;
-              playerWin++;
+            || playerSelection == 'scissors' &&  computerSelection == 'paper') 
+            {
+                playerWin++;
+                playerScoreEl.innerHTML = `Score: ${playerWin}`;
             }
-          
       else {
-        result = 'You Lose, ' + computerSelection + ' beats ' + playerSelection;
         computerWin++;
+        computerScoreEl.innerHTML = `Score: ${computerWin}`
       }
-
-      return result
 }
 
 
 
 //compare for 5 points - game function
 function game(e) {
-    const player = e.target.value
+    const player = e.target.parentElement.value;
 
-    const para = document.querySelector('#result-para');
-    let p = document.createElement('div');
-    
     // check for 5 wins
     if(playerWin < 5 && computerWin < 5) {
-        const roundResult = playRound(player);
-        const scoreBoard = "; Your score is: " + playerWin + " ; Computer's score is: " + computerWin;
-
-
-        p.textContent = roundResult + scoreBoard;
+        const roundResult = setTimeout(function() { playRound(player); }, 1000);
     } else {
         if(playerWin > computerWin) {
-            p.textContent = "You are the winner, reload to play again"
+            console.log("You are the winner, reload to play again");
         } else {
-            p.textContent = "Computer is the winner, reload to play again"
+            console.log("Computer is the winner, reload to play again");
         }
-    }
-
-
-
-    //showing result in para div
-    para.appendChild(p)
-    
+    }   
 }
-
 
 //check buttons are clicked
 const buttons = document.querySelectorAll('button')
-
 buttons.forEach(function(button) {
     button.addEventListener('click', game);
 })
