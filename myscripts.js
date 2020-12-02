@@ -1,6 +1,5 @@
 //track wins
-let playerWin = 0;
-let computerWin = 0;
+let playerWin = 0, computerWin = 0;
 
 // create objects for choice
 const choices = [
@@ -24,7 +23,6 @@ const scissorsBtn = document.getElementById('scissors');
 
 // generate random choice for pc
 const computerChoice = () => choices[Math.floor(Math.random() * choices.length)].choice;
-
 
 // show choices
 const showChoice = (playerChoice, computerChoice) => {
@@ -50,7 +48,13 @@ const showChoice = (playerChoice, computerChoice) => {
 // check game over
 const checkGameOver = () => {
     if (playerWin == 5 || computerWin == 5) {
-        alert ('game over');
+        document.getElementById('game-over-div').style.display = 'block';
+        
+        if (playerWin > computerWin) {
+            document.getElementById('result-div').innerHTML = `Congratulations, You defetaed the computer.`
+        } else {
+            document.getElementById('result-div').innerHTML = `Uh Oh! Computer defeated you.`
+        }
     }
 }
 
@@ -68,7 +72,6 @@ function playRound(playerSelection) {
     if(playerSelection == computerSelection) {
         result = "Its a tie, both called " + playerSelection;
       }
-
       else if(playerSelection == 'rock' && computerSelection == 'scissors' 
             || playerSelection == 'paper'  && computerSelection == 'rock'
             || playerSelection == 'scissors' &&  computerSelection == 'paper') 
@@ -101,3 +104,6 @@ function game() {
 }
 
 game();
+
+// restart game
+document.getElementById('restart-game-button').addEventListener('click', () => { location.reload() });

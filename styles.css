@@ -1,14 +1,12 @@
 /* import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Montserrat&family=Open+Sans&family=Raleway:wght@900&family=Roboto&family=Source+Code+Pro:wght@700&family=Ubuntu:wght@700&display=swap');
 
-
 :root {
     font-family: 'Roboto', sans-serif;
     
     --bg-primary: #F5F5F5;
     --text-color-primary: #F5F5F5;
-    --theme-color-primary: #18181B;
-    
+    --theme-color-primary: #18181B; 
 }
 
 html, body {
@@ -16,9 +14,6 @@ html, body {
     padding: 0;
     background: var(--bg-primary);
 }
-
-
-
 
 /* game */
 .container-flex {
@@ -44,12 +39,29 @@ html, body {
     justify-content: space-around;
 }
 
+.container-game-over {
+    display: none;
+    width: 70%;
+    height: 30%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-color-primary);
+    border: 4px solid var(--text-color-primary);
+    border-radius: 1rem;
+    background-color: var(--theme-color-primary);
+}
+
+.container-game-over h1 {
+    padding: 0;
+}
+
 .choices-div {
     width: 100%;
 }
-
-
-
 
 /* horizental rule */
 hr {
@@ -58,15 +70,6 @@ hr {
     border-radius: 1rem;
     margin: 0 1rem;
 }
-
-
-
-
-
-
-
-
-
 
 /* images */
 img {
@@ -87,29 +90,6 @@ button {
 button:active {
     transform: scale(1.5);
 }  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 h2 {
     padding: 0;
@@ -195,15 +175,6 @@ footer ul {
 .attribution {
     text-decoration: underline;
 }
-
-
-
-
-
-
-
-
-
 
 /* FOR DESKTOP */
 @media only screen and (min-width: 768px) {
