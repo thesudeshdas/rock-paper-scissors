@@ -1,7 +1,6 @@
 //track wins
 let playerWin = 0;
 let computerWin = 0;
-let x = 5;
 
 // create objects for choice
 const choices = [
@@ -48,6 +47,12 @@ const showChoice = (playerChoice, computerChoice) => {
     })
 }
 
+// check game over
+const checkGameOver = () => {
+    if (playerWin == 5 || computerWin == 5) {
+        alert ('game over');
+    }
+}
 
 //function for 1 round
 function playRound(playerSelection) {
@@ -75,28 +80,24 @@ function playRound(playerSelection) {
         computerWin++;
         computerScoreEl.innerHTML = `Score: ${computerWin}`
       }
+      
+      checkGameOver();
 }
 
 
 
 //compare for 5 points - game function
-function game(e) {
-    const player = e.target.parentElement.value;
-
-    // check for 5 wins
-    if(playerWin < 5 && computerWin < 5) {
-        const roundResult = setTimeout(function() { playRound(player); }, 1000);
-    } else {
-        if(playerWin > computerWin) {
-            console.log("You are the winner, reload to play again");
-        } else {
-            console.log("Computer is the winner, reload to play again");
-        }
-    }   
+function game() {
+    const playGame = e => {
+        const player = e.target.parentElement.value;
+        setTimeout(function() { playRound(player); }, 500);
+    }
+    
+    //check buttons are clicked
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach(function(button) {
+        button.addEventListener('click', playGame);
+    })  
 }
 
-//check buttons are clicked
-const buttons = document.querySelectorAll('button')
-buttons.forEach(function(button) {
-    button.addEventListener('click', game);
-})
+game();

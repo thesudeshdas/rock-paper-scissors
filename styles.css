@@ -80,7 +80,13 @@ button {
     padding: 0;
     background: transparent;
     outline: none;
+    transition: ease-in-out all 0.1s;
+    transform: scale(1);
 }
+
+button:active {
+    transform: scale(1.5);
+}  
 
 
 
