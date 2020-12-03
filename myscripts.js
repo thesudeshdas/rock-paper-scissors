@@ -51,7 +51,7 @@ const checkGameOver = () => {
         document.getElementById('game-over-div').style.display = 'block';
         
         if (playerWin > computerWin) {
-            document.getElementById('result-div').innerHTML = `Congratulations, You defetaed the computer.`
+            document.getElementById('result-div').innerHTML = `Congratulations, You defeated the computer.`
         } else {
             document.getElementById('result-div').innerHTML = `Uh Oh! Computer defeated you.`
         }
