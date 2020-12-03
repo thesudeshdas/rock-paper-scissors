@@ -150,6 +150,7 @@ li {
 /* footer */
 footer {
     display: block;
+    position: relative;
     bottom: 0;
     right: 0;
     left: 0;
@@ -188,5 +189,11 @@ footer ul {
 
     footer h2 {
         margin: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    footer {
+        position: absolute;
     }
 }
