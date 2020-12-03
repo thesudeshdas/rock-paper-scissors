@@ -17,5 +17,5 @@ The project is created under the curriculam of The Odin Project - Web Developmen
 * JavaScript
 
 ### Credits
-The Odin Project - Web Development 101.
+The Odin Project - Web Development 101. <br>
 [Click here!](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors) to learn more about the project.
